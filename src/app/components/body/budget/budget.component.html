@@ -18,6 +18,12 @@
             </tr>
         </thead>
         <tbody>
+            @for (budget of budgets; track budget.Id) 
+            {
+                <td>{{ budget.budgetMonth }}</td>
+            }
+          
+            
            
 
         </tbody>
