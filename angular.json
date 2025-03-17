@@ -32,9 +32,16 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/assets/css/bootstrap.css",
+              "src/assets/css/responsive.css",
+              "src/assets/css/style.css"
+
             ],
-            "scripts": [],
+            "scripts": [
+              "src/assets/js/jquery-3.4.1.min.js",
+              "src/assets/js/bootstrap.js",
+              "src/assets/js/custom.js"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "server",
             "ssr": {
