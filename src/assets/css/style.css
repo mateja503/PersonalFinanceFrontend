@@ -679,10 +679,11 @@ a:focus {
 }
 
 .footer_bg {
-  background-image: url(footer-bg.png);
+  /* background-image: url(footer-bg.png); */
   background-size: cover;
+  background-color: #041858;
   background-position: right top;
-  padding-top: 250px;
+  padding-top: 100px;
 }
 
 .contact_section {
