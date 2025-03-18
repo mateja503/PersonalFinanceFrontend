@@ -2,10 +2,10 @@ import { AccountUserBudget } from "./AccountUserBudget"
 
 export interface Budget{
 
-    Id: number
+    id?: number
     budgetMonth: string
     budgetAmount?: number
-    accountUserBudget?: AccountUserBudget[]
+    accountUserBudgetList?: AccountUserBudget[]
     year?: number
     month?: number
 }
