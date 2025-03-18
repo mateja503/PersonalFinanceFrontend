@@ -3,7 +3,7 @@ import { TransactionNotes } from "./TransactionNotes"
 
 export interface Category
 {
-    Id: number
+    id?: number
     categoryName: string
     transactionList: TransactionNotes[]
     accountUserBudgetList: AccountUserBudget[]

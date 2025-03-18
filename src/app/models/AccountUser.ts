@@ -6,7 +6,7 @@ import { Role } from "./Role"
 export interface AccountUser
 {
 
-    Id: number
+    id: number
     name: string
     surname: string
     email: string

@@ -2,7 +2,7 @@ import { TransactionNotes } from "./TransactionNotes"
 
 export interface Note
 {
-    Id: number
+    id: number
     text: string
     transactionNotesList: TransactionNotes[]
 

@@ -3,7 +3,7 @@ import { FinancialGoals } from "./FinancialGoals"
 
 export interface AccountUserFinancialGoals
 {
-    Id: number
+    id: number
     accountUser: AccountUser
     accountUserId: number
     financialGoal: FinancialGoals

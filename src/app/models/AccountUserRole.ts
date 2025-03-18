@@ -3,7 +3,7 @@ import { Role } from "./Role"
 
 export interface AccountUserRole
 {
-    Id: number
+    id: number
     accountUser: AccountUser
     accountUserId: number
     role: Role

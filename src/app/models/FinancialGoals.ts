@@ -3,7 +3,7 @@ import { AccountUserFinancialGoals } from "./AccountUserFInancialGoals"
 export interface FinancialGoals
 {
 
-    Id: number
+    id: number
     goalText: string
     goalReachInTime: string
     amountGoal: number

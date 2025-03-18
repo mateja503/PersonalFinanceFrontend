@@ -1,1 +1,49 @@
-<p>category works!</p>
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">Categories</h2>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <app-button text="Add" color="green" (btnClick)="onAdd()"></app-button>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th></th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @for (category of categories; track category.id) 
+            {
+                <tr>
+                    <td>{{ category.id }}</td>
+                    <td>{{ category.categoryName }}</td>
+                   
+                    <td>
+                        <div class="row">
+                            <div class="col-6">
+                                <app-button text="Edit" color="blue" (btnClick)="onEdit(category.id,category)"></app-button>
+
+                            </div>
+                            <div class="col-6">
+                                <app-button text="Delete" color="red" (btnClick)="onDelete(category.id)"></app-button>
+                            </div>
+
+                        </div>
+                    </td>
+                </tr>
+                
+            }
+          
+            
+           
+
+        </tbody>
+
+    </table>
+    </div>

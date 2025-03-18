@@ -4,7 +4,7 @@ import { RoleEnum } from "./enumiration/RoleEnum"
 export interface Role
 {
 
-    Id: number
+    id: number
     userRole: RoleEnum
     accountUsersList: AccountUser[]
 }

@@ -4,7 +4,7 @@ import { TransactionNotes } from "./TransactionNotes"
 
 export interface Transaction
 {
-    Id: number
+    id: number
     datetime: string
     amount: number
     transactionType: TransationType

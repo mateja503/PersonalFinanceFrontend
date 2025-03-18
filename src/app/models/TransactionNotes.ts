@@ -4,7 +4,7 @@ import { Transaction } from "./Transaction"
 export interface TransactionNotes
 {
 
-    Id: number
+    id: number
     transaction: Transaction
     transactionId: number
     note: Note

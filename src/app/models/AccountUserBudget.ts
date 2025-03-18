@@ -5,7 +5,7 @@ import { Category } from "./Category"
 export interface AccountUserBudget
 {
 
-    Id: number
+    id: number
     AccountUser: AccountUser
     accountUserId: number
     budget: Budget
