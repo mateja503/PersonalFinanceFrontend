@@ -19,8 +19,17 @@ export class BudgetComponent implements OnInit {
     private route: ActivatedRoute, 
     private router: Router) {}
 
+    // formatDate(inputDate: string): string{
+    //   const date = new Date(inputDate)
+    //   const year = date.getFullYear()
+    //   const month = String(date.getMonth() + 1).padStart(2,'0')
+    //   const day = String(date.getDay() + 1).padStart(2,'0')
+    //   return `${year}-${month}-${day}`
+    // }
+    
   ngOnInit(): void {
       this.budgetService.getAll().subscribe((b) => this.budgets = b)
+      // this.budgets.forEach((u) => u.budgetMonth = this.formatDate(u.budgetMonth))
   }
 
   onEdit(id:any,budget: Budget) : void
