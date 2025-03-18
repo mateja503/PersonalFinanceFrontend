@@ -20,7 +20,12 @@
         <tbody>
             @for (budget of budgets; track budget.Id) 
             {
-                <td>{{ budget.budgetMonth }}</td>
+                <tr>
+                    <td>{{ budget.budgetMonth.toString() }}</td>
+                    <td>{{ budget.budgetAmount }}</td>
+                    
+                </tr>
+                
             }
           
             

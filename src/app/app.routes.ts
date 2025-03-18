@@ -4,7 +4,8 @@ import { HomeComponent } from './components/body/home/home.component';
 import { CategoryComponent } from './components/body/category/category.component';
 
 export const routes: Routes = [
-        {path: '', component: HomeComponent},
+         {path: '', redirectTo: "home", pathMatch: "full"},
+        {path: 'home', component: HomeComponent},
         {path:'budget',component: BudgetComponent},
         {path: 'category',component: CategoryComponent}
 
