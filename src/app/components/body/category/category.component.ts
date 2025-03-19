@@ -35,6 +35,12 @@ export class CategoryComponent implements OnInit {
   onDelete(id:any)
   {
 
+    this.categoryService.delete(id).subscribe({
+      next:()=>{
+        alert('Category Deleted!!')
+        this.categories = this.categories.filter((u)=>u.id !== id)
+    }
+    })
       
   }
 }
