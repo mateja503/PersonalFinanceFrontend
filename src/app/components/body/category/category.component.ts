@@ -28,13 +28,13 @@ export class CategoryComponent implements OnInit {
 
   onEdit(id:any,category:Category)
   {
-    // const url = `/category/edit/${id}`
-    // this.router.navigate([`/category/edit/${id}`])
+    const url = `/category/edit/${id}`
+    this.router.navigate([url])
   }
 
   onDelete(id:any)
   {
 
-
+      
   }
 }

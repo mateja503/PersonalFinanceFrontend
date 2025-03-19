@@ -5,7 +5,7 @@ import { CategoryComponent } from './components/body/category/category.component
 import { AddBudgetComponent } from './components/body/budget/add-budget/add-budget.component';
  import { EditBudgetComponent } from './components/body/budget/edit-budget/edit-budget.component';
 import { AddCategoryComponent } from './components/body/category/add-category/add-category.component';
-// import { EditCategoryComponent } from './components/body/category/edit-category/edit-category.component';
+import { EditCategoryComponent } from './components/body/category/edit-category/edit-category.component';
 
 export const routes: Routes = [
         {path: '', redirectTo: "home", pathMatch: "full"},
@@ -19,7 +19,7 @@ export const routes: Routes = [
         //categorgy routes
         {path: 'category',component: CategoryComponent},
         {path: 'category/add',component: AddCategoryComponent},
-        // {path: 'category/edit/:id',component: EditCategoryComponent},
+        {path: 'category/edit/:id',component: EditCategoryComponent},
         
 
 ];

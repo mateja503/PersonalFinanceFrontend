@@ -1,0 +1,13 @@
+
+<form class="budget-form mt-5" (ngSubmit)="onSubmit()">
+    <!-- Date Input -->
+    <div class="mb-3">
+      <label for="name"  class="form-label">Name of the  Category</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="name" required />
+    </div>
+  
+    <!-- Submit Button -->
+    <div class="d-grid mb-3" >
+      <button type="submit" class="btn btn-success w-100 mt-3">Add</button>
+    </div>
+  </form>
