@@ -1,0 +1,56 @@
+
+<form class="budget-form mt-5" (ngSubmit)="onSubmit()">
+    <!-- Date Input -->
+    <div class="mb-3">
+      <label for="dataTime"  class="form-label">Date</label>
+      <input type="date" class="form-control" id="dataTime" name="dataTime" [(ngModel)]="dateTime" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="amount"  class="form-label">Amount</label>
+        <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="amount" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="categoryName"  class="form-label">Category Name</label>
+        <input type="text" class="form-control" id="categoryName" name="categoryName" [(ngModel)]="categoryName" />
+      </div>
+
+
+
+      <div class="mb-3 ">
+     
+            <label class="form-label mr-5">Select Category</label>
+            <select [(ngModel)]="selectedCategoryId" name="selectedCategoryId" id="selectedCategoryId">
+                @for(c of categories; track c.id)
+                {
+                    <option [value] = "c.id" >{{ c.categoryName }}</option>
+                }
+             </select>
+        
+      </div>
+
+      <div class="mb-3 ">
+     
+        <label class="form-label mr-5">Select Type</label>
+        <select [(ngModel)]="selectedType" name="selectedType" id="selectedType" required>
+            @for(t of transactionTypes; track t.id)
+            {
+                <option [value] = "t.id" >{{ t.type }}</option>
+            }
+         </select>
+    
+  </div>
+
+      <div class="mb-3">
+        <label for="noteText"  class="form-label">Note Text</label>
+        <input type="text" class="form-control" id="noteText" name="noteText" [(ngModel)]="noteText" />
+      </div>
+
+     
+  
+    <!-- Submit Button -->
+    <div class="d-grid mb-3" >
+      <button type="submit" class="btn btn-success w-100 mt-3">Add</button>
+    </div>
+  </form>

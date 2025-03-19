@@ -1,9 +1,9 @@
-import { TransactionNotes } from "./TransactionNotes"
+import { TransactionNote } from "./TransactionNote"
 
 export interface Note
 {
-    id: number
+    id?: number
     text: string
-    transactionNotesList: TransactionNotes[]
+    transactionNoteList: TransactionNote[]
 
 }

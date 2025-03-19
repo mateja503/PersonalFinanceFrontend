@@ -9,6 +9,8 @@ import { EditCategoryComponent } from './components/body/category/edit-category/
 import { FinancialGoalsComponent } from './components/body/financial-goals/financial-goals.component';
 import { AddFinancialGoalComponent } from './components/body/financial-goals/add-financial-goal/add-financial-goal.component';
 import { EditFinancialGoalComponent } from './components/body/financial-goals/edit-financial-goal/edit-financial-goal.component';
+import { TransactionComponent } from './components/body/transaction/transaction.component';
+import { AddTransactionComponent } from './components/body/transaction/add-transaction/add-transaction.component';
 
 export const routes: Routes = [
         {path: '', redirectTo: "home", pathMatch: "full"},
@@ -24,11 +26,17 @@ export const routes: Routes = [
         {path: 'category/add',component: AddCategoryComponent},
         {path: 'category/edit/:id',component: EditCategoryComponent},
 
-        //financial goal router
+        //financial goal routes
         {path: 'financialGoals', component: FinancialGoalsComponent},
         {path: 'financialGoals/add', component: AddFinancialGoalComponent },
-        {path: 'financialGoals/edit/:id', component: EditFinancialGoalComponent }
+        {path: 'financialGoals/edit/:id', component: EditFinancialGoalComponent },
 
+        //transaction routes
+        {path: 'transaction', component: TransactionComponent},
+        {path: 'transaction/add',component: AddTransactionComponent}
+
+
+      
         
 
 ];

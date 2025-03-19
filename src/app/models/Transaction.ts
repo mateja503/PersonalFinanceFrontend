@@ -1,14 +1,15 @@
 import { Category } from "./Category"
 import { TransationType } from "./enumiration/TransationType"
-import { TransactionNotes } from "./TransactionNotes"
+import { TransactionNote } from "./TransactionNote"
 
 export interface Transaction
 {
-    id: number
+    id?: number
     datetime: string
     amount: number
     transactionType: TransationType
-    category: Category
+    category?: Category
     categoryId: number
-    transactionNotesList: TransactionNotes[]
+    transactionNoteList: TransactionNote[]
+
 }
