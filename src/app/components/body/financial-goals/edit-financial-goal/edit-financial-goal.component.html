@@ -1,0 +1,25 @@
+
+<form class="budget-form mt-5" (ngSubmit)="onSubmit()">
+    <!-- Date Input -->
+    <div class="mb-3">
+      <label for="goalText"  class="form-label">Text for the goal</label>
+      <input type="text" class="form-control" id="goalText" name="goalText" [(ngModel)]="goalText" required />
+    </div>
+
+    <div class="mb-3">
+        <label for="goalReachInTime"  class="form-label">Date for the Goal</label>
+        <input type="date" class="form-control" id="goalReachInTime" name="goalReachInTime" [(ngModel)]="goalReachInTime" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="amountGoal"  class="form-label">Amount Needed</label>
+        <input type="number" class="form-control" id="amountGoal" name="amountGoal" [(ngModel)]="amountGoal" required />
+      </div>
+
+     
+  
+    <!-- Submit Button -->
+    <div class="d-grid mb-3" >
+      <button type="submit" class="btn btn-success w-100 mt-3">Add</button>
+    </div>
+  </form>

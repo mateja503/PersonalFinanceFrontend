@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row pt-4 pb-3">
+        <div class="col-6">
+            <h2 class="text-primary">Financial Goals</h2>
+        </div>
+        <div class="col-6 d-flex justify-content-end">
+            <app-button text="Add" color="green" (btnClick)="onAdd()"></app-button>
+        </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Text</th>
+                <th>DateToReach</th>
+                <th>Amount</th>
+                <th>Year</th>
+                <th>Month</th>
+                <th></th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @for (goal of goals; track goal.id) 
+            {
+                <tr>
+                    <td>{{ goal.id }}</td>
+                    <td>{{ goal.goalText }}</td>
+                    <td>{{ goal.goalReachInTime }}</td>
+                    <td>{{ goal.amountGoal }}</td>
+                    <td>{{ goal.amountGoal }}</td>
+                    <td>{{ goal.amountGoal }}</td>
+
+                   
+                    <td>
+                        <div class="row">
+                            <div class="col-6">
+                                <app-button text="Edit" color="blue" (btnClick)="onEdit(goal.id,goal)"></app-button>
+
+                            </div>
+                            <div class="col-6">
+                                <app-button text="Delete" color="red" (btnClick)="onDelete(goal.id)"></app-button>
+                            </div>
+
+                        </div>
+                    </td>
+                </tr>
+                
+            }
+          
+            
+           
+
+        </tbody>
+
+    </table>
+    </div>

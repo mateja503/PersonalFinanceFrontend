@@ -24,13 +24,13 @@ export abstract class GeneralService<T extends object> {
 
   getAll():Observable<T[]>{
     const url = `${this.url}/all`
-    return this.http.get<T[]>(url,httpOptions);
+    return this.http.get<T[]>(url);
  }
 
  get(index:number):Observable<T>
  {
     const url = `${this.url}/${index}`
-    return this.http.get<T>(url,httpOptions)
+    return this.http.get<T>(url)
  }
 
  add(budget: T):Observable<T>

@@ -28,8 +28,12 @@ export class BudgetComponent implements OnInit {
     // }
     
   ngOnInit(): void {
-      this.budgetService.getAll().subscribe((b) => this.budgets = b)
+      this.loadBudgets()
       // this.budgets.forEach((u) => u.budgetMonth = this.formatDate(u.budgetMonth))
+  }
+
+  loadBudgets(): void{
+    this.budgetService.getAll().subscribe((b) => this.budgets = b)
   }
 
   onEdit(id:any,budget: Budget) : void
@@ -48,7 +52,8 @@ export class BudgetComponent implements OnInit {
   {
     this.budgetService.delete(id).subscribe({
       next: (budget) => {
-        this.budgets = this.budgets.filter((b) => b.id !== budget.id); 
+        // this.budgets = this.budgets.filter((b) => b.id !== budget.id); 
+        this.loadBudgets()
       }
     })
       
