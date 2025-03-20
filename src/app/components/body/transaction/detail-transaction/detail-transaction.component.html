@@ -1,0 +1,59 @@
+
+<div class="budget-form mt-5">
+    <!-- Date Input -->
+    <div class="mb-3">
+      <label for="datetime"  class="form-label">Date</label>
+      <input type="date" class="form-control" id="datetime" name="datetime" [(ngModel)]="datetime" disabled />
+    </div>
+
+    <div class="mb-3">
+        <label for="amount"  class="form-label">Amount</label>
+        <input type="number" class="form-control" id="amount" name="amount" [(ngModel)]="amount" disabled />
+      </div>
+
+      
+
+
+
+      <div class="mb-3 ">
+     
+            <label class="form-label mr-5">Select Category</label>
+            <select [(ngModel)]="selectedCategoryId" name="selectedCategoryId" id="selectedCategoryId" disabled>
+                @for(c of categories; track c.id)
+                {
+                    <option [value] = "c.id" >{{ c.categoryName }}</option>
+                }
+             </select>
+        
+      </div>
+
+
+
+      <div class="mb-3 ">
+     
+        <label class="form-label mr-5">Select Type</label>
+        <select [(ngModel)]="selectedType" name="selectedType" id="selectedType" disabled>
+            @for(t of transactionTypes; track t.id)
+            {
+                <option [value] = "t.id" >{{ t.type }}</option>
+            }
+         </select>
+    
+    </div>
+
+    <app-button text="AddNote" color="green" class="pb-3" (btnClick)="addNewField()"></app-button>
+
+
+    @for(note of notesList; track note.id)
+    {
+        <div class="m-3" style="display: block ruby;">
+            <label for="noteText"  class="form-label pr-3">Note</label>
+            <input type="text" class="form-control" style="height: 50px; width: 500px;" id="noteText" name="noteText" [(ngModel)]="note.text" #noteInput />
+            <app-button text="Edit" color="blue" class="pl-3" (btnClick)="changeNoteText(note.id,noteInput.value)"></app-button>
+            <app-button text="Delete" color="red" class="pl-3" (btnClick)="deleteNote(note.id)"></app-button>
+          </div>
+         
+    }
+
+</div>
+

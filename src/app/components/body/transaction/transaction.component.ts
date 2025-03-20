@@ -76,7 +76,7 @@ export class TransactionComponent implements OnInit {
 
   onDetail(id:any)
   {
-
-
+    const url = `/transaction/detail/${id}`
+    this.router.navigate([url])
   }
 }

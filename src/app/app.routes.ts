@@ -12,6 +12,7 @@ import { EditFinancialGoalComponent } from './components/body/financial-goals/ed
 import { TransactionComponent } from './components/body/transaction/transaction.component';
 import { AddTransactionComponent } from './components/body/transaction/add-transaction/add-transaction.component';
 import { EditTransactionComponent } from './components/body/transaction/edit-transaction/edit-transaction.component';
+import { DetailTransactionComponent } from './components/body/transaction/detail-transaction/detail-transaction.component';
 
 export const routes: Routes = [
         {path: '', redirectTo: "home", pathMatch: "full"},
@@ -35,7 +36,8 @@ export const routes: Routes = [
         //transaction routes
         {path: 'transaction', component: TransactionComponent},
         {path: 'transaction/add',component: AddTransactionComponent},
-        {path: 'transaction/edit/:id',component: EditTransactionComponent}
+        {path: 'transaction/edit/:id',component: EditTransactionComponent},
+        {path: 'transaction/detail/:id',component: DetailTransactionComponent}
 
 
       

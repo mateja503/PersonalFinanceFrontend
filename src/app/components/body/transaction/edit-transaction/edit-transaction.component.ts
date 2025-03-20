@@ -50,7 +50,7 @@ export class EditTransactionComponent implements OnInit {
 
     }
 
-    getTranasctionNoteId()
+    getTranasctionId()
     {
         return Number(this.route.snapshot.paramMap.get('id')) || 0
     }
@@ -65,7 +65,7 @@ export class EditTransactionComponent implements OnInit {
   }
 
     ngOnInit(): void {
-      this.transactionService.get(this.getTranasctionNoteId()).subscribe({
+      this.transactionService.get(this.getTranasctionId()).subscribe({
         next: (t) => {
             this.selectedCategoryId = t.categoryId
             this.selectedType = Number(t.transactionType)
@@ -99,7 +99,7 @@ export class EditTransactionComponent implements OnInit {
                   transactionNoteList: []
                 }
                 console.log(newTransaction)
-                this.transactionService.edit(newTransaction,this.getTranasctionNoteId())
+                this.transactionService.edit(newTransaction,this.getTranasctionId())
                       .subscribe({
                         next: () => 
                           {
