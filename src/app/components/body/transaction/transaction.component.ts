@@ -5,6 +5,8 @@ import { TransactionService } from '../../../services/transaction.service';
 import { Router } from '@angular/router';
 import { CategoryService } from '../../../services/category.service';
 import { TransationType } from '../../../models/enumiration/TransationType';
+import { TransactionNoteService } from '../../../services/transaction-note.service';
+import { TransactionNote } from '../../../models/TransactionNote';
 
 @Component({
   selector: 'app-transaction',
@@ -14,8 +16,12 @@ import { TransationType } from '../../../models/enumiration/TransationType';
 })
 export class TransactionComponent implements OnInit {
   transactions: Transaction[] = []
+  t!: TransactionNote
 
-  constructor(private transactionService: TransactionService, private categoryService: CategoryService,private router: Router){}
+  constructor(private transactionService: TransactionService,
+     private categoryService: CategoryService,
+     private transactionNoteService: TransactionNoteService,
+     private router: Router){}
 
   loadTransactions()
   {
@@ -26,9 +32,8 @@ export class TransactionComponent implements OnInit {
             this.categoryService.get(t.categoryId).subscribe((u)=> t.category = u)
           }
        
-         console.log(t)
       })
-
+      console.log(u)
       this.transactions = u
 
     })
@@ -50,14 +55,23 @@ export class TransactionComponent implements OnInit {
 
   onEdit(id:any,t:Transaction)
   {
-
-
+    const url = `/transaction/edit/${id}`
+    this.router.navigate([url])
   }
 
   onDelete(id:any)
   {
-
-
+    this.transactionService.delete(id)
+    .subscribe( {
+      next: () => {
+        alert('Deleted transaction')
+        this.loadTransactions()
+      },
+      error:()=>{
+        alert('Error delete transaction')
+      }
+    })
+   
   }
 
   onDetail(id:any)

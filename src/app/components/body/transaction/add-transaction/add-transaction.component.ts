@@ -20,7 +20,7 @@ import { TransactionNote } from '../../../../models/TransactionNote';
 })
 export class AddTransactionComponent implements OnInit{
 
-  dateTime!:string
+  datetime!:string
   amount!: number
   categoryName!: string 
   noteText!: string
@@ -111,13 +111,14 @@ export class AddTransactionComponent implements OnInit{
     console.log(id)
     const newTransaction = 
     {
-      datetime: this.dateTime,
+      dateTime: this.datetime,
       amount: this.amount,
-      transactionType: this.selectedType,
+      transactionType: Number(this.selectedType),
       categoryId: id,
       transactionNoteList: []
     }
 
+    console.log(newTransaction)
     
     return this.transactionService.add(newTransaction)
     // .subscribe((u)=> this.transaction = u)
@@ -126,9 +127,7 @@ export class AddTransactionComponent implements OnInit{
   addTransactionNote(): Observable<TransactionNote>
   {
       const newTransactionNote = {
-        note: this.note,
         noteId: this.note.id,
-        transaction: this.transaction,
         transactionId: this.transaction.id
       }
 
@@ -147,7 +146,7 @@ export class AddTransactionComponent implements OnInit{
   onSubmit()
   {
     console.log(this.noteText)
-    if(!this.dateTime || !this.amount || (!this.categoryName && !this.selectedCategoryId) || !this.selectedType)
+    if(!this.datetime || !this.amount || (!this.categoryName && !this.selectedCategoryId) || !this.selectedType)
       {
         alert('Please enter all of the fields needed')
         
