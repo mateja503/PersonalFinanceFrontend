@@ -3,6 +3,7 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { AuthService } from '../../services/auth.service';
 import { HttpClient } from '@angular/common/http';
+import { UserServiceService } from '../../services/user-service.service';
 
 @Component({
   selector: 'app-header',
@@ -12,20 +13,21 @@ import { HttpClient } from '@angular/common/http';
 })
 
 export class HeaderComponent implements OnInit {
+
   authService = inject(AuthService)
+  
+  ngOnInit(): void {}
+  
 
-  constructor(){}
 
-
-  ngOnInit(): void {
-  }
 
   logout()
   {
     console.log('Logout....')
-    localStorage.setItem('token','')
-    this.authService.currentUserSignal.set(null)
-    console.log(this.authService.currentUserSignal())
+    localStorage.removeItem('token')
+    localStorage.clear()
+    this.authService.currentUserSignal.set(undefined)
+    // console.log(this.authService.currentUserSignal())
   }
 }
 

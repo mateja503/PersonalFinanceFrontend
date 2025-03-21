@@ -16,7 +16,7 @@ export class LoginComponent {
 
 
   constructor(private loginService: LoginService,
-    private authService : AuthService,
+     private authService : AuthService,
     private router: Router){}
 
 
@@ -42,7 +42,6 @@ export class LoginComponent {
         {
             alert('Login successfull!!')
             localStorage.setItem('token',u.userAuthentication.token)
-            console.log(u.userAuthentication.token)
             this.authService.currentUserSignal.set(u)
             this.router.navigate(['/'])
         },

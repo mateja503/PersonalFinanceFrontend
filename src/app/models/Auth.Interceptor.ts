@@ -1,15 +1,29 @@
-import {HttpEvent, HttpHandlerFn, HttpInterceptorFn, HttpRequest } from "@angular/common/http";
-import { Observable } from "rxjs";
 
-export const AuthInterceptor : HttpInterceptorFn = (request: HttpRequest<unknown>,next : HttpHandlerFn) : Observable<HttpEvent<unknown>> => 
-    {
-        const token = localStorage.getItem('token') ?? ''
-        const modified = request.clone({
-            setHeaders: {
-                Authorization: token ?`Token ${token}`:''
-            },
-        })
+import { HttpInterceptorFn } from '@angular/common/http';
 
-        return next(modified)
+export const AuthInterceptor: HttpInterceptorFn = (request, next) => {
+  
+  const token = localStorage.getItem('token')
+  console.log('This is the te AuthInterceptor')
+  console.log(token)
+  if (token) {
+    request = request.clone({
+      setHeaders: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+  }
+  
 
-    };
+  return next(request)
+//   .pipe(
+//     catchError((error: HttpErrorResponse) => {
+//       if (error.status === 401 || error.status === 403) {
+//         console.warn('Unauthorized! Redirecting to login...');
+//         authService.clearToken();
+//         router.navigate(['/login']);
+//       }
+//       return throwError(() => error);
+//     })
+//   );
+};

@@ -3,6 +3,7 @@ import { RegisterService } from '../../../services/register.service';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from '../../../services/auth.service';
+// import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,10 @@ export class RegisterComponent {
   name!: string
   surname!:string
 
-  constructor(private registerService: RegisterService,private authService: AuthService,private router: Router){}
+  constructor(private registerService: RegisterService,
+    private authService: AuthService,
+    private router: Router){}
+
 
   onSubmit()
   {
@@ -45,11 +49,16 @@ export class RegisterComponent {
       next: (user) => 
         {
           alert('User registered successfully')
+          console.log('This is the user')
+          console.log(user)
           localStorage.setItem('token',user.userAuthentication.token)
+          console.log('This is the token from the user that is registered')
           console.log(user.userAuthentication.token)
+          console.log('This is the token that was saved in the browser')
+          console.log(localStorage.getItem('token'))
           this.authService.currentUserSignal.set(user)
-          console.log('This is the authService.currentUserSignal()')
-          console.log(this.authService.currentUserSignal())
+          // console.log('This is the authService.currentUserSignal()')
+          // // console.log(this.authService.currentUserSignal())
           this.router.navigate(['/'])
         },
         error:() => 
