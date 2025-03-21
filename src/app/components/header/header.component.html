@@ -39,10 +39,21 @@
         <a class="nav-link disabled" href="#">Disabled</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0 px-2" style="display: flex;">
-        <input class="form-control" type="search" placeholder="Search" aria-label="Search">
-        <button class="btn btn-outline-success" style="margin-left: 10px; margin-right: 10px;" type="submit">Search</button>
-      </form>
+    <!-- if the currentUserSignal is null it means that we are not logged in -->
+    <div *ngIf="authService.currentUserSignal() === null" style="display: flex;"> 
+        <a class="nav-link" routerLink="/login">Login</a>
+        <a class="nav-link" routerLink="/register">Register</a>
+    </div>
+
+        <div *ngIf="authService.currentUserSignal()" style="display: flex;"> 
+          <div class="pr-5">
+            {{ authService.currentUserSignal()?.userAuthentication?.au_username }}
+          </div>
+
+          <div>
+            <span  (click)="logout()">LogOut</span>
+          </div>
+        </div>
   </div>
  
 </nav>

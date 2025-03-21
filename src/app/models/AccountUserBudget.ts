@@ -1,12 +1,12 @@
-import { AccountUser } from "./AccountUser"
 import { Budget } from "./Budget"
 import { Category } from "./Category"
+import { UserInteface } from "./UserInterface"
 
 export interface AccountUserBudget
 {
 
     id: number
-    AccountUser: AccountUser
+    AccountUser: UserInteface
     accountUserId: number
     budget: Budget
     budgetId: number

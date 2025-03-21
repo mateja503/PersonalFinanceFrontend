@@ -13,6 +13,8 @@ import { TransactionComponent } from './components/body/transaction/transaction.
 import { AddTransactionComponent } from './components/body/transaction/add-transaction/add-transaction.component';
 import { EditTransactionComponent } from './components/body/transaction/edit-transaction/edit-transaction.component';
 import { DetailTransactionComponent } from './components/body/transaction/detail-transaction/detail-transaction.component';
+import { LoginComponent } from './components/body/login/login.component';
+import { RegisterComponent } from './components/body/register/register.component';
 
 export const routes: Routes = [
         {path: '', redirectTo: "home", pathMatch: "full"},
@@ -37,7 +39,16 @@ export const routes: Routes = [
         {path: 'transaction', component: TransactionComponent},
         {path: 'transaction/add',component: AddTransactionComponent},
         {path: 'transaction/edit/:id',component: EditTransactionComponent},
-        {path: 'transaction/detail/:id',component: DetailTransactionComponent}
+        {path: 'transaction/detail/:id',component: DetailTransactionComponent},
+
+
+        //login route
+        {path: 'login', component: LoginComponent},
+
+
+        //registe route
+        {path: 'register', component: RegisterComponent},
+
 
 
       

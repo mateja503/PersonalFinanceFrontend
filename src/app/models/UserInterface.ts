@@ -3,16 +3,14 @@ import { AccountUserFinancialGoals } from "./AccountUserFInancialGoals"
 import { Auth } from "./Auth"
 import { Role } from "./Role"
 
-export interface AccountUser
+export interface UserInteface 
 {
-
-    id: number
-    name: string
-    surname: string
-    email: string
-    amount: number
-    roles: Role[]
+    name:string
+    surname:string
+    email:string
+    amount:number
+    roles:Role[]
     accountUserFinancialGoalList: AccountUserFinancialGoals[]
-    auth: Auth
+    userAuthentication: Auth
     accountUserBudgetList: AccountUserBudget[]
 }

@@ -1,10 +1,10 @@
-import { AccountUser } from "./AccountUser"
 import { FinancialGoals } from "./FinancialGoals"
+import { UserInteface } from "./UserInterface"
 
 export interface AccountUserFinancialGoals
 {
     id: number
-    accountUser: AccountUser
+    accountUser: UserInteface
     accountUserId: number
     financialGoal: FinancialGoals
     financialGoalId: number
