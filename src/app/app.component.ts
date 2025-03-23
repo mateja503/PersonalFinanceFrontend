@@ -23,12 +23,21 @@ export class AppComponent implements OnInit{
   ) {}
 
 
+  checkIfTokenExists() : string | null
+  {
+
+    const token = localStorage.getItem('token')
+    console.log('Check if token exists')
+    console.log(token)
+    return token
+  }
 
 
   checkUser(){
     
     console.log('This is the authService,currengsignalt() in app.component')
     console.log(this.authService.currentUserSignal())
+  
 
     this.userService.get().subscribe({
         next: (user) =>
@@ -36,6 +45,7 @@ export class AppComponent implements OnInit{
            
             console.log('User found')
             console.log(user)
+            console.log(user.roles)
             this.authService.currentUserSignal.set(user);
           },
           error: (err) => 
@@ -49,7 +59,13 @@ export class AppComponent implements OnInit{
 
   ngOnInit(){
     if (isPlatformBrowser(this.platformId)) {
-      this.checkUser()
+    //   console.log(this.authService.currentUserSignal())
+    //  if(this.authService.currentUserSignal())
+    console.log(this.checkIfTokenExists())
+    if(this.checkIfTokenExists() !== null)
+          this.checkUser()
+        
+      
     }
     // this.checkUser()
     // this.http.get<UserInteface>('http://localhost:5082/api/AccountUser/validate-user')
