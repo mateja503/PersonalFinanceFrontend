@@ -104,7 +104,9 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.scss",
+              "node_modules/admin-lte/dist/css/adminlte.min.css"
+              
             ],
             "scripts": []
           }
