@@ -45,10 +45,15 @@
      
     </ul>
     <!-- if the currentUserSignal is null it means that we are not logged in -->
-    <div *ngIf="authService.currentUserSignal() === undefined" style="display: flex;"> 
+    <div *ngIf="authService.currentUserSignal() === null" style="display: flex;"> 
         <a class="nav-link" routerLink="/login">Login</a>
         <a class="nav-link" routerLink="/register">Register</a>
     </div>
+
+    <div *ngIf="authService.currentUserSignal() === undefined" style="display: flex;"> 
+      <a class="nav-link" routerLink="/login">Login</a>
+      <a class="nav-link" routerLink="/register">Register</a>
+  </div>
 
         <div *ngIf="authService.currentUserSignal()" style="display: flex;"> 
           <div class="pr-5">
