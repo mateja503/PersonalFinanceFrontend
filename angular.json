@@ -44,10 +44,9 @@
               "src/assets/js/custom.js"
             ],
             "server": "src/main.server.ts",
-            "outputMode": "server",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "prerender": false,
+            "ssr":false
+            
           },
           "configurations": {
             "production": {
