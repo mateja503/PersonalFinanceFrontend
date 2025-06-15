@@ -12,7 +12,9 @@ export class BudgetService extends GeneralService<Budget> {
 
    constructor(http: HttpClient) 
    {
-      super(http,'http://localhost:5082/api/Budget')
+      super(http,'/api/Budget')
+            // super(http,'http://localhost:5082/api/Budget')
+
   }
 
  

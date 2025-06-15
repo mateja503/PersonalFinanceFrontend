@@ -10,7 +10,8 @@ export class TransactionNoteService extends GeneralService<TransactionNote> {
 
   constructor(http: HttpClient) 
   {
-    super(http,'http://localhost:5082/api/TransactionNote')
+    super(http,'/api/TransactionNote')
+    // super(http,'http://localhost:5082/api/TransactionNote')
     
    }
 }

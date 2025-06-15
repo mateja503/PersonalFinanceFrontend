@@ -19,7 +19,9 @@ const httpOptions = {
 })
 export class RegisterService {
 
-  apiUrl = 'http://localhost:5082/api/AccountUser/register'
+  apiUrl = '/api/AccountUser/register'
+    // apiUrl = 'http://localhost:5082/api/AccountUser/register'
+
   constructor(private http:HttpClient) { }
 
 

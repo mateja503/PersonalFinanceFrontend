@@ -10,6 +10,8 @@ export class NoteService extends GeneralService<Note> {
 
   constructor(http: HttpClient) 
   {
-    super(http,'http://localhost:5082/api/Note')
-   }
+    super(http,'/api/Note')
+        // super(http,'http://localhost:5082/api/Note')
+
+  }
 }

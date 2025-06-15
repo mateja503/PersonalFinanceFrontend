@@ -10,6 +10,8 @@ export class CategoryService extends GeneralService<Category> {
 
   constructor(http: HttpClient) 
   {
-     super(http,'http://localhost:5082/api/Category')
+     super(http,'/api/Category')
+          // super(http,'http://localhost:5082/api/Category')
+
  }
 }

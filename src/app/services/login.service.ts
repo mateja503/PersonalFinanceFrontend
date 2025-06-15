@@ -17,7 +17,9 @@ const httpOptions = {
 })
 export class LoginService {
 
-  apiUrl = 'http://localhost:5082/api/AccountUser/login'
+  apiUrl = '/api/AccountUser/login'
+    // apiUrl = 'http://localhost:5082/api/AccountUser/login'
+
   constructor(private http:HttpClient) { }
 
 

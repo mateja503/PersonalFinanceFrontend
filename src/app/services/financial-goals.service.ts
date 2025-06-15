@@ -10,6 +10,8 @@ export class FinancialGoalsService extends GeneralService<FinancialGoals> {
 
   constructor(http:HttpClient) 
   {
-    super(http,'http://localhost:5082/api/FinancialGoals')
+    super(http,'/api/FinancialGoals')
+        // super(http,'http://localhost:5082/api/FinancialGoals')
+
   }
 }

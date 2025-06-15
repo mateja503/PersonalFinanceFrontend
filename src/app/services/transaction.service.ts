@@ -9,6 +9,8 @@ import { HttpClient } from '@angular/common/http';
 export class TransactionService extends GeneralService<Transaction> {
   constructor(http: HttpClient) 
   {
-    super(http,'http://localhost:5082/api/Transaction')
-   }
+    super(http,'/api/Transaction')
+        // super(http,'http://localhost:5082/api/Transaction')
+
+  }
 }
